@@ -1,0 +1,48 @@
+1. open putty.
+2. create a directory. -> mkdir <directoryname>
+3. creating two file. -> touch <filename.ext>{1..2}
+   or touch <1st filename.ext> and touch <2nd filename.ext>
+4. Adding text to the file. -> echo "Type the text" > filename.ext.
+5. Viewing the text in the file using cat. cat > filename.txt.
+6. Creating another directory. mkdir <2nddirectoryname>.
+7. copy 2nd directory into first directory. cp -r <directory you want to copy> <directory where you want to put it>.
+8. copy the first file into first directory.-> cp <1stfilename.ext> <1stdirectoryname>.
+9. copy the second file into second directory.-> cp <2ndfilename.ext> <2nddirectoryname>.
+10. Remove the second directory. -> rmdir <2nd directoryname>
+11. Remove the first file. -> rm filename.ext.
+12. Move a file from the Linux system to HDFS. -> hadoop fs -copyFromLocal <source_location_in_local filesystem><destination_location_in_HDFS>
+-put
+Note: hadoop fs -copyFromLocal /home/maria_dev/<filename.ext> /user/maria_dev/<directory>.
+
+13. Move a file from HDFS to the Linux system.-> hadoop fs -copyToLocal <source_location_in_HDFS><destination_location_in_local filesystem>
+-get
+Note: hadoop fs -copyToLocal /user/maria_dev/<filename.txt> /home/maria_dev/<directory>.
+
+
+2nd
+1. Create a Hadoop HDFS directory.
+
+hadoop fs -mkdir <directoryname>
+
+2. Upload a file to HDFS.
+
+ hdfs dfs -put ../Desktop/<filename.txt> /<dest directory>
+
+3. Check the contents of the uploaded file in HDFS.
+
+hadoop fs -cat <filename.ext>
+
+4. Copy the file within HDFS to a different location.
+
+hadoop fs -cp <filename.ext> <directoryname to move>
+
+5. Move the file within HDFS to another location.
+
+hadoop fs -mv <filename.ext> <directoryname to move>
+
+6. Delete the file from HDFS.
+
+hadoop fs -rm -r <filename.ext>
+
+7. Move a file from HDFS to the Linux system.
+8. Move a file from the Linux system to HDFS.
